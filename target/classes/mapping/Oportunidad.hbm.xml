@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-mapping>
+    <class name="models.Oportunidad" table="oportunidad">
+        <id column="id" name="id" type="integer">
+            <generator class="identity"/>
+        </id>        
+        <property name="descripcion" type="string"/>       
+        <property name="valor" type="big_decimal"/>
+        <property name="fecha" type="date"/>
+        <property name="nivel" type="string"/>
+        <property name="estado" type="string"/>
+        
+        
+        <set name="actividades" table="actividad">
+            <key>
+                <column name="id_oportunidad"></column>
+            </key>            
+            <one-to-many class="models.Actividad"></one-to-many>            
+        </set>
+        <many-to-one class="models.Cliente" name="cliente" not-null="true">
+            <column name="id_cliente"></column>
+        </many-to-one>
+    </class>    
+</hibernate-mapping>
