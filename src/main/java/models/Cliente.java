@@ -136,7 +136,20 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" + "id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", empresa=" + empresa + ", telefono=" + telefono + ", email=" + email + '}';
+        
+        String idf = String.format("%-5s", id);
+        String nombref = String.format("%-12s", nombre);
+        String apellidosf = String.format("%-20s", apellidos);
+        String empresaf = String.format("%-23s", empresa);
+        String telefonof = String.format("%-13s", telefono);
+        String emailf = String.format("%-30s", email);
+        
+        return  "Id: " + idf +
+                "Nombre: " + nombref +
+                "Apellido/s: " + apellidosf +
+                "Empresa: " + empresaf +
+                "Teléfono: " + telefonof +
+                "E-Mail: " + emailf +"\n";
     }
 
 }

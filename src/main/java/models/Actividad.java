@@ -6,9 +6,7 @@
 package models;
 
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 /**
  *
@@ -106,7 +104,16 @@ public class Actividad {
 
     @Override
     public String toString() {
-        return "Actividad{" + "id=" + id + ", tipo=" + tipo + ", descripcion=" + descripcion + ", fecha=" + fecha + '}';
+        
+        String idf = String.format("%-5s", id);
+        String tipof = String.format("%-12s", tipo);
+        String descripcionf = String.format("%-25s", descripcion);
+        String fechaf = String.format("%-23s", fecha);
+        
+        return  "Id: " + idf +
+                "Tipo: " + tipof +
+                "Descripción: " + descripcionf +
+                "Fecha: " + fechaf +"\n";
     }
 
 }

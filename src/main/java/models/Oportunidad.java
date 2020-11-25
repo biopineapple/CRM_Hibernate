@@ -151,7 +151,19 @@ public class Oportunidad {
 
     @Override
     public String toString() {
-        return "Oportunidad{" + "id=" + id + ", descripcion=" + descripcion + ", valor=" + valor + ", fecha=" + fecha + ", nivel=" + nivel + ", estado=" + estado + '}';
+        
+        String idf = String.format("%-5s", id);
+        String descripcionf = String.format("%-25s", descripcion);
+        String valorf = String.format("%-10s", valor);
+        String fechaf = String.format("%-20s", fecha);
+        String nivelf = String.format("%-13s", nivel);
+        String estadof = String.format("%-30s", estado);
+        
+        return  "Id: " + idf +
+                "Descripción: " + descripcionf +
+                "Valor: " + valorf +
+                "Fecha: " + fechaf +
+                "Nivel: " + nivelf +
+                "Estado: " + estadof +"\n";
     }
-
 }
